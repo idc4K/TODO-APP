@@ -20,7 +20,15 @@ def modifier(request, pk):
     c = question.objects.get(id=pk)
 
     form = questionForm(instance=c)
+   
+    if request.method == "POST":
+        form = questionForm(request.POST, instance=c)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {'form':form}
+
    
     return render(request, 'todo/update.html',context)
 # Create your views here.
