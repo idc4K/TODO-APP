@@ -1,5 +1,6 @@
 <h3>modifier la question</h3>
 
 <form>
+    {% csrf_token %} {{form.titre}}
     <input type="submit" name="modifier question">
 </form>

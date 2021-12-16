@@ -20,7 +20,7 @@ def modifier(request, pk):
     c = question.objects.get(id=pk)
 
     form = questionForm(instance=c)
-    contexte = {'c':c}
+    context = {'form':form}
    
-    return render(request, 'todo/update.html',contexte)
+    return render(request, 'todo/update.html',context)
 # Create your views here.
