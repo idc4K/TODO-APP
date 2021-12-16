@@ -5,4 +5,8 @@
 </form>
 {% for question in q %}
 <p>{{question}}</p>
-{%endfor%}
+<div>
+    <a href="{% url 'modifier' question.id  %}" aria-label="Twitter">modfier</a>
+</div>
+
+</a> {%endfor%}
