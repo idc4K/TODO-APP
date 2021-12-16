@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
 
@@ -12,6 +12,7 @@ def todo(request):
         form = questionForm(request.POST)
         if form.is_valid():
             form.save()
+        return redirect('/')
     context = {'q':q,'form':form}
     return render(request, 'todo/index.html', context)
 # Create your views here.

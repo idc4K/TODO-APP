@@ -1,6 +1,6 @@
 <h1>TODO APPS</h1>
 <form method="POST" action="/">
-    {{form.titre}}
+    {% csrf_token %} {{form.titre}}
     <input type="submit" name="creation">
 </form>
 {% for question in q %}
