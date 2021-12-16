@@ -15,4 +15,8 @@ def todo(request):
         return redirect('/')
     context = {'q':q,'form':form}
     return render(request, 'todo/index.html', context)
+
+def modifier(request, pk):
+
+    return render(request, 'todo/update.html')
 # Create your views here.
