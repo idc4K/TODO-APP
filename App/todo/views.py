@@ -33,6 +33,8 @@ def modifier(request, pk):
     return render(request, 'todo/update.html',context)
 # Create your views here.
 
-def supprimer(request,pk){
+def supprimer(request,pk):
     item = question.objects.get(id=pk)
-}
+    context = {'item': item}
+    return render(request, 'todo/delete.html', context)
+
