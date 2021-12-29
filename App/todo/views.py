@@ -21,7 +21,7 @@ def modifier(request, pk):
 
     form = questionForm(instance=c)
    
-    if request.method == "POST":
+    if request.method == 'POST':
         form = questionForm(request.POST, instance=c)
 
         if form.is_valid():
@@ -35,6 +35,9 @@ def modifier(request, pk):
 
 def supprimer(request,pk):
     item = question.objects.get(id=pk)
+    if request.method == 'POST':
+        item.delete()
+        return redirect('/')
     context = {'item': item}
     return render(request, 'todo/delete.html', context)
 

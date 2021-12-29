@@ -1,2 +1,7 @@
 <p>voulez vous vraiment supprimer "{{item}}" ?</p>
 <a href="{% url 'accueil' %}">Non</a>
+
+<form method='POST' action=''>
+    {% csrf_token %}
+    <input type="submit" value="confirmer">
+</form>

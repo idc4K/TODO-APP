@@ -7,7 +7,9 @@
 <p>{{question}}</p>
 <div>
     <a href="{% url 'modifier' question.id  %}" aria-label="Twitter">modifier</a>
-    <a href="{% url 'supprimer' question.id  %}" aria-label="Twitter">supprimer</a>
+    <a href="{% url 'supprimer' question.id  %}" aria-label="Twitter">supprimer</a> {% if quesiton.complete == TRUE %}
+    <strike>{{question}}</strike> {% else %}
+    <span>{{question}}</span> {% endif %}
 </div>
 
 </a> {%endfor%}
